@@ -1,29 +1,80 @@
-# React Todo App
+# Create Todo React App easily with Material UI
 
-![React Todo App](https://user-images.githubusercontent.com/4316355/40896619-028936a4-6784-11e8-8bad-1ef6537a1a12.png)
+To begin:
+<br />
+`npx create-react-app my-app`
+<br />
+`cd my-app`
+<br />
+`npm start`
 
-Code for YouTube Series on building a Todo App using React.js: [YouTube Link](https://www.youtube.com/playlist?list=PLEhEHUEU3x5qz5OYDXamBmYnLvwboYTdH)
+Delete all default mark up.
 
-**Note:** Each video has a corresponding branch. The `master` branch is up to date with the latest video.
+For components create folder #components in #src folder and place there your react components.
+In my project you can see: Form.jsx, FormInput.jsx, List.jsx.
+You can create as many components as you want and name it how you like.
 
-## Build Setup
+In this project Material-UI is used.
+To install run:
+<br />
+`npm install @material-ui/core`
 
-``` bash
-# install dependencies
-npm install
+Material-UI was developed based on the Roboto font.
+The Roboto font will not be automatically loaded into Material-UI.
+*So be sure to install it.*
 
-# serve at localhost:3000
-npm start
+To install run:
+<br />
+`npm install fontsource-roboto`
+
+Then import it in "index.js". To do so write in "index.js":
+<br />
+`import 'fontsource-roboto'`;
+
+To use icons run:
+<br />
+`npm install @material-ui/icons`
+
+Button example:
+```
+import  React from 'react';
+import Button from "@material-ui/core/Button";
+
+// custom styles with Material UI
+const useStyles = makeStyles({
+    root: {
+        background: 'linear-gradient(45deg, gray 30%, black 90%)',
+        border: 0,
+        color: 'white',
+        height: 30,
+        padding: '0 10px',
+        whiteSpace: 'nowrap',
+        margin: '15px 0 0 20px',
+    }
+});
+
+
+const Button = () => {
+   const classes = useStyles();
+    
+   return (
+      <Button
+           type="submit"
+           alt="add-note"
+           className={classes.root}
+       >
+           Add task
+       </Button>
+     )
+     
+export  default Button;
 ```
 
-## Specific Branch
+Then you can see the result - button "ADD TASK" look like:
 
-If you want to checkout a certain branch:
+![Button example](https://github.com/EvaMalinina/todo-list-react-hooks/blob/master/src/demo/button%20git.gif)
 
-`git branch -a` to list all the branches.
+That was easy, right :)
 
-`git checkout 01-basics` (or any branch) to check it out.
 
-## Laravel API
 
-The Laravel API repo can be [found here](https://github.com/drehimself/todo-laravel).
